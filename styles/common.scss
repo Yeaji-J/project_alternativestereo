@@ -1,0 +1,84 @@
+$font-size-h-32:2rem;
+$font-size-h-28:1.75rem;
+$font-size-h-20:1.25rem;
+$font-size-p-16:1rem;
+$font-size-p-14:0.875rem;
+$font-size-p-14-t-price:0.875rem;
+$font-size-p-12:0.75rem;
+$font-size-p-10:0.625rem;
+$font-weight-med:500;
+$font-weight-bold:600;
+$font-weight-sbold:700;
+$line-height-basic:150%;
+$color-black:#222;
+$color-white:#fff;
+$color-grey-border-light:#d8d8d8;
+$color-grey-border:#aaa;
+$color-grey-border-dark:#919191;
+$color-point:#4c8628;
+$color-point-bg:#E1EDD9;
+$color-bg:#F5EBE0;
+$border:1.5px solid #aaa;
+
+@mixin main_title {
+    font-size:2rem;
+    font-weight:700;
+    font-family:'Paprika', sans-serif;
+}
+@mixin main_title_t {
+    font-size:$font-size-h-28;
+    font-family:'Paprika', sans-serif;
+}
+@mixin main_title_m {
+    font-size:$font-size-h-20;
+    font-family:'Paprika', sans-serif;
+}
+
+@mixin main_sub_title {
+    font-size:1.25rem;
+    font-weight:500;
+    line-height:150%;
+}
+@mixin main_sub_title_t {
+    font-size:$font-size-p-12;
+    font-weight:500;
+    line-height:150%;
+}
+@mixin main_sub_title_m {
+    font-size:$font-size-p-10;
+    font-weight:500;
+    line-height:150%;
+}
+
+@mixin main_p {
+    font-size:0.875rem;
+    line-height:150%;
+}
+@mixin main_p_t {
+    font-size:$font-size-p-12;
+    line-height:150%;
+}
+@mixin main_p_m {
+    font-size:$font-size-p-10;
+    line-height:150%;
+}
+
+@mixin flex-row {
+    display:flex;
+    flex-flow:row nowrap;
+    align-items:center;
+}
+@mixin flex-col {
+    display:flex;
+    flex-flow:column nowrap;
+}
+@mixin border-top-bottom {
+    border:1.5px solid #aaa;
+    border-left:0; border-right:0;
+}
+@mixin border-light {
+    border:1.5px solid #d8d8d8;
+}
+@mixin border-dark {
+    border:1.5px solid #919191;
+}
