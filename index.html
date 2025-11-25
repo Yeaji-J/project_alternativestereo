@@ -11,9 +11,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- css, js -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.scss">
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/products.js" defer></script>
     <script src="./scripts/swiper.js" defer></script>
 </head>
 <body>
@@ -21,7 +29,7 @@
         <h1 id="logo">
             <a href="./index.html">
                 <img src="./images/logo.png" alt="얼터너티브스테레오">
-                <span class="logo_hidden" style="display:hidden">Alternativestereo</span>
+                <span class="logo_hidden" style="display:none">Alternativestereo</span>
             </a>
         </h1>
         <nav>
@@ -53,57 +61,19 @@
         </nav>
     </header>
     <main>
-        <section class="swiper" id="main1_bnr">
+        <div class="swiper" id="main1_bnr">
             <div class="swiper-wrapper">
-                <div class="swiper-slide slide1">
-                    <p class="bnr_desc">과일과 꽃의 맑은 빛에서 영감을 받은 투명한 컬러.<br>덧발라도 처음의 맑음 그대로.</p>
-                    <p class="bnr_prod_name">립 포션 아쿠아 글로우</p>
-                    <a href="#"><img src="./images/Rectangle 4.png" alt="립 포션 아쿠아 글로우 보러 가기"></a>
-                </div>
-                <div class="swiper-slide slide2">
-                    <p class="bnr_desc">세안 후 적당한 수분기를 머금어<br>속부터 투명하고 촉촉하게 빛나는 순간</p>
-                    <p class="bnr_prod_name">애프터 샤워 솝 누드 쿠션</p>
-                    <a href="#"><img src="./images/Rectangle 4.png" alt="애프터 샤워 솝 누드 쿠션 보러 가기"></a>
-                </div>
-                <div class="swiper-slide slide3">
-                    <p class="bnr_desc">과일과 꽃의 맑은 빛에서 영감을 받은 투명한 컬러.<br>덧발라도 처음의 맑음 그대로.</p>
-                    <p class="bnr_prod_name">립 포션 아쿠아 글로우</p>
-                    <a href="#"><img src="./images/Rectangle 4.png" alt="립 포션 아쿠아 글로우 보러 가기"></a>
-                </div>
-                <div class="swiper-slide slide4">
-                    <p class="bnr_desc">세안 후 적당한 수분기를 머금어<br>속부터 투명하고 촉촉하게 빛나는 순간</p>
-                    <p class="bnr_prod_name">애프터 샤워 솝 누드 쿠션</p>
-                    <a href="#"><img src="./images/Rectangle 4.png" alt="애프터 샤워 솝 누드 쿠션 보러 가기"></a>
-                </div>
+                <!-- <div class="swiper-slide"></div> js -->
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-        </section>
+        </div>
         <section id="main2_best">
             <h2 class="sub_title">Best-Seller</h2>
             <div class="swiper" id="best-swiper">
                 <div class="swiper-wrapper">
-                    <div class="siwper-slide slide1">
-                        <a href="#"><img src="./images/main2_best_001.png" alt="립 포션 아쿠아 글로우"></a>
-                        <div class="color_chips">
-                            <span class="each_color_chip"></span>
-                            <span class="each_color_chip"></span>
-                            <span class="each_color_chip"></span>
-                            <span class="each_color_chip"></span>
-                            <span class="each_color_chip"></span>
-                            <span class="more_color_chip">+7</span>
-                        </div>
-                        <a href="#"><h3 class="best_prod_name">립 포션 아쿠아 글로우 12 Colors</h3></a>
-                        <div class="best_prod_details">
-                            <div class="prod_price">
-                                <em class="dc_rate">10%</em>
-                                <span class="dc_price">17,100원</span>
-                                <del class="original_price">19,000원</del>
-                            </div>
-                            <button type="button" class="shop_btn"><img src="./images/shopping_bag.png" alt="장바구니 담기"></button>
-                        </div>
-                    </div>
+                    <!-- <div class="siwper-slide></div> js -->
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -147,33 +117,13 @@
             <p>얼터너티브스테레오는 아날로그의 멋이 있는 로우파이 컬처를 기반으로 하는 뷰티 & 라이프스타일 브랜드입니다.<br>뷰티 노하우와 룩, 아직 발견하지 못한 새로운 질감과 컬러를 담은 뷰티 상품들을 중심으로 아날로그 감성의 문화와 스타일을 풀어갑니다.</p>
         </section>
         <section class="swiper" id="main5_lookbook">
+            <h2 class="sub_title">Alternative<br>Lookbook</h2>
+            <p class="sub_desc">
+                The essence of color,<br>reimagined by Alternativestereo.<br>색의 본질을,<br>얼터너티브스테레오만의 감각으로 다시 그리다.
+            </p>
+            <p class="more_info">룩북에 활용된 제품들을 바로 만나보세요!</p>
             <div class="swiper-wrapper">
-                <div class="swiper-slide slide1">
-                    <div class="lookbook_prod_wrap">
-                        <a href="#" class="lookbook_prod">
-                            <img src="./images/main5_lookbook_001.png" alt="바미 로즈">
-                            <h3 class="lookbook_prod_name"></h3>
-                        </a>
-                    </div>
-                    <div class="lookbook_thumbnail">
-                        <div class="lookbook_photo_card">
-                            <a href="#">
-                                <img src="./images/main5_magazine_001.png" alt="소프트 모브">
-                            </a>
-                            <div class="lookbook_desc">
-                                <p>부드럽게 스며들어 오래 남는 색</p>
-                                <p class="lookbook_name">SOFT MAUVE</p>
-                            </div>
-                        </div>
-                        <div class="lookbook_envelop">
-                            <h2 class="sub_title">Alternative<br>Lookbook</h2>
-                            <p class="sub_desc">
-                                The essence of color,<br>reimagined by Alternativestereo.<br>색의 본질을,<br>얼터너티브스테레오만의 감각으로 다시 그리다.
-                            </p>
-                            <p class="more_info">룩북에 활용된 제품들을 바로 만나보세요!</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- <div class="swiper-slide"></div> js -->
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
@@ -199,6 +149,7 @@
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
+            </div>
         </section>
         <section id="main7_eco_friendly">
             <h2 class="sub_title small">Eco-friendly Packaging</h2>
