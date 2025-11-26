@@ -2,10 +2,14 @@
 const bnrSwiperWrapper = document.querySelector('#main1_bnr .swiper-wrapper')
 const bnrHTML = bnrData.map(bnr => {
     return `
-    <div class="swiper-slide">
-        <p class="bnr_desc">${bnr.desc}</p>
-        <p class="bnr_prod_name">${bnr.prodName}</p>
-        <a href="#"><img src="${bnr.imgSrc}" alt="${bnr.prodName}보러가기"></a>
+    <div class="swiper-slide" style="background:url(${bnr.bgImgSrc1}) left 15% bottom 0/contain no-repeat, url(${bnr.bgImgSrc2}) right 10% bottom 25%/40% no-repeat;">
+        <div class="bnr_txt_container">
+            <p class="bnr_desc">${bnr.desc}</p>
+            <div class="bnr_detail">
+                <p class="bnr_prod_name">${bnr.prodName}</p>
+                <a href="#" class="more_icon"><img src="${bnr.imgSrc}" alt="${bnr.prodName}보러가기"></a>
+            </div>
+        </div>
     </div>
     `;
 }).join('');
@@ -98,5 +102,31 @@ const lookbookSwiper = new Swiper('#main5_lookbook',{
     navigation:{
         prevEl:".swiper-button-prev",
         nextEl:".swiper-button-next"
+    }
+})
+
+//main8_instagram
+const instaSwiperWrapper = document.querySelector('#instagram_wrap .swiper-wrapper')
+const instaHTML = instaData.map(feed => {
+    return `
+    <div class="swiper-slide">
+        <a href="#"><img src="${feed.src}" alt="인스타그램 속 상품 확인하기"></a>
+    </div>
+    `;
+}).join('');
+instaSwiperWrapper.innerHTML = instaHTML;
+const instaSwiper = new Swiper('#instagram_wrap',{
+    slidesPerView:4,
+    spaceBetween:24,
+    autoplay:true,
+    clickable:true,
+    loop:true,
+    pagination:{
+        el:'.swiper-pagination',
+        type:'progressbar'
+    },
+    navigation:{
+        prevEl:'.swiper-button-prev',
+        nextEl:'.swiper-button-next',
     }
 })

@@ -1,1 +1,92 @@
 @use "./common.scss" as *;
+
+body {
+    /* 공통 */
+    min-width:320px;
+    background:url(../images/bg003.png) center/20% repeat;
+    h2.sub_title {
+        color:$color-point-red;
+        @include main_sub_title_d;
+    }
+    /* 개별 */
+    header {
+        width:200px; height:100vh; padding:42px; text-align:center;
+        position:fixed; top:0; left:0; z-index:999;
+        #logo {
+            width:116px; height:68px;
+            a {
+                img {@include img_contain;}
+            }
+        }
+        nav {
+            height:100%; padding:60px 0; text-align:left;
+            @include flex-col; justify-content:space-between;
+            .menu_bundle {
+                @include flex-col; gap:20px;
+                .menu_toggle {
+                    width:36px; height:36px;
+                    img {@include img_cover;}
+                }
+                .dropdown_menu {
+                    @include flex-col; gap:16px; align-items:flex-start;
+                    .sub_menu {
+                        a {@include font_basic_sbold; font-size:$font-size-p-16;}
+                        .menu_under_shop {
+                            padding:16px 8px 24px;
+                            @include flex-col; gap:12px; align-items:flex-start;
+                            li {
+                                a {
+                                    @include font_basic_med; font-size:$font-size-p-16;
+                                }
+                                .menu_under_all {
+                                    padding:16px;
+                                    @include flex-col; gap:8px; align-items:flex-start;
+                                    li {
+                                        a {@include font_basic_med; font-size:$font-size-p-14;}
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            .user_icons {
+                @include flex-col; gap:24px;
+            }
+        }
+    }
+    main {
+        #main1_bnr {
+            position:relative;
+            width:100vw; height:100vh;
+            background:url(../images/main1_bnr_bg_noise.png) center/cover no-repeat;
+            .swiper-wrapper {
+                .swiper-slide {
+                    background:rgba(0,0,0,0.1);
+                    .bnr_txt_container {
+                        @include flex-col; justify-content:center; align-items:center; gap:24px;
+                        position:absolute; top:20%; right:20%;
+                        .bnr_desc {
+                            @include font_basic_med; font-size:$font-size-p-18;
+                        }
+                        .bnr_detail {
+                            @include flex-row; gap:24px; justify-content:center; align-items:center;
+                            .bnr_prod_name {
+                                @include font_basic_sbold; font-size:$font-size-h-28; color:$color-point-red;
+                            }
+                            .more_icon {
+                                width:40px; height:9px;
+                                img {@include img_contain;}
+                            }
+                        }
+                    }
+                }
+            }
+            .swiper-pagination {
+                position:absolute; right:0; bottom:20%
+            }
+        }
+    }
+
+}

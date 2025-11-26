@@ -19,10 +19,11 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- css, js -->
     <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="./styles/main.css">
     <script src="./scripts/index.js" defer></script>
     <script src="./scripts/products.js" defer></script>
     <script src="./scripts/swiper.js" defer></script>
+    <script src="./scripts/tab_menu.js" defer></script>
 </head>
 <body>
     <header>
@@ -33,27 +34,29 @@
             </a>
         </h1>
         <nav>
-            <button class="menu_toggle"><img src="./images/menu.png" alt="전체 메뉴 보기"></button>
-            <ul class="dropdown_menu">
-                <li><a href="#">ABOUT US</a></li>
-                <li>
-                    <a href="#">SHOP</a>
-                    <ul class="menu_under_shop">
-                        <li>
-                            <a href="#">All Products</a>
-                            <ul class="menu_under_all">
-                                <li><a href="#">Lip</a></li>
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Best-Seller</a></li>
-                        <li><a href="#">New Products</a></li>
-                        <li><a href="#">Launching</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">LOOKBOOK</a></li>
-                <li><a href="#">COMMNUITY</a></li>
-            </ul>
+            <div class="menu_bundle">
+                <button class="menu_toggle"><img src="./images/menu.png" alt="전체 메뉴 보기"></button>
+                <ul class="dropdown_menu">
+                    <li class="sub_menu"><a href="#">ABOUT US</a></li>
+                    <li class="sub_menu">
+                        <a href="#">SHOP</a>
+                        <ul class="menu_under_shop" style="display:none;">
+                            <li>
+                                <a href="#">All Products</a>
+                                <ul class="menu_under_all">
+                                    <li><a href="#">Lip</a></li>
+                                    <li><a href="#">Face</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Best-Seller</a></li>
+                            <li><a href="#">New Products</a></li>
+                            <li><a href="#">Launching</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub_menu"><a href="#">LOOKBOOK</a></li>
+                    <li class="sub_menu"><a href="#">COMMNUITY</a></li>
+                </ul>
+            </div>
             <div class="user_icons">
                 <a href="#" class="shopping_bag"><img src="./images/shopping_bag.png" alt="장바구니"></a>
                 <a href="#" class="my_page"><img src="./images/User.png" alt="마이페이지"></a>
@@ -83,32 +86,13 @@
             <h2 class="sub_title">New-Products</h2>
             <div class="new_tab_menu_area">
                 <ul class="new_tab_menu_list">
-                    <li class="new_tab_btn active" data-tab="new_tab1">base</li>
-                    <li class="new_tab_btn" data-tab="new_tab2">blush</li>
-                    <li class="new_tab_btn" data-tab="new_tab3">mat-lip</li>
-                    <li class="new_tab_btn" data-tab="new_tab4">glow-lip</li>
+                    <li class="new_tab_btn" data-category="base"><button>base</button></li>
+                    <li class="new_tab_btn active" data-category="blush"><button>blush</button></li>
+                    <li class="new_tab_btn" data-category="matt"><button>matt-lip</button></li>
+                    <li class="new_tab_btn" data-category="glow"><button>glow-lip</button></li>
                 </ul>
-                <div class="swiper" id="new-tab-panel-wrapper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="./images/detail0115.png" alt="블러싱 팬던트 립 앤 치크">
-                            <div class="prod_info"> <!-- info -> desc -> detail -->
-                                <h3 class="new_prod_name">
-                                    블러싱 팬던트 립 앤 치크 (26 colors)
-                                </h3>
-                                <p class="new_prod_desc">26가지 컬러로 만드는 나만의 립 앤 치크 팔레트</p>
-                                <p class="new_prod_kw">#New팬던트 케이스<br>#빈티지한 컬러감</p>
-                                <div class="new_prod_details">
-                                    <div class="prod_price">
-                                        <em class="dc_rate">10%</em>
-                                        <span class="dc_price">17,100원</span>
-                                        <del class="original_price">19,000원</del>
-                                    </div>
-                                    <button type="button" class="shop_btn"><img src="./images/shopping_bag.png" alt="장바구니 담기"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="new_products_container" id="new_products_page">
+                    <!-- ProductCardHTML js -->
                 </div>
             </div>
         </section>
@@ -129,7 +113,7 @@
             <div class="swiper-button-next"></div>
         </section>
         <section id="main6_launching">
-            <a href="#"><img src="./images/caremel001.jpg" alt="립 포션 카라멜 글레이즈 8ml"></a>
+            <a href="#"><img src="./images/caramel001.jpg" alt="립 포션 카라멜 글레이즈 8ml"></a>
             <div class="launching_info_section">
                 <div class="title">
                     <h2 class="sub_title">Launching</h2>
@@ -137,14 +121,12 @@
                 </div>
                 <div class="launch_tab_menu_area">
                     <ul class="launch_tab_menu_list">
-                        <li class="launch_tab_btn active" data-tab="launch_tab1">#립 포션 카라멜 글레이즈 8ml</li>
-                        <li class="launch_tab_btn" data-tab="launch_tab2">#립 포션 슈가 글레이즈 틴트 미니 4ml</li>
+                        <li class="launch_tab_btn active" data-category="caramel"><button>#립 포션 카라멜 글레이즈 8ml</button></li>
+                        <li class="launch_tab_btn" data-category="sugar_glazed"><button>#립 포션 슈가 글레이즈 틴트 미니 4ml</button></li>
                     </ul>
-                    <div class="swiper" id="launch-tab-panel-wrapper">
+                    <div class="swiper" id="launch_tab_panel_wrapper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide slide1">
-                                <a href="#"><img src="./images/main6_new_001.png" alt="밀크 카라멜"></a>
-                            </div>
+                            <!-- <div class="swiper-slide slide1"></div> js -->
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -173,9 +155,7 @@
             <h2 class="sub_title">Instagram</h2>
             <div class="swiper" id="instagram_wrap">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide slide1">
-                        <a href="#"><img src="./images/main8_sns_001.jpg" alt="인스타그램 속 상품 확인하기"></a>
-                    </div>
+                    <!-- <div class="swiper-slide"></div> js -->
                 </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -211,7 +191,7 @@
                 <li>ADDRESS</li>
             </ul>
             <ul class="sub_menu_contents">
-                <li>주식회사 에이에스씨씨</li>
+                <li>주식회사 에이에스씨씨</li> 
                 <li>지혜란</li>
                 <li><address><a href="mailto:ascc@alternativestereo.com">ascc@alternativestereo.com</a></address></li>
                 <li><span>02-6091-5420</span><span>오전 10시 ~ 오후 6시 (주말, 공휴일 휴무)</span></li>
