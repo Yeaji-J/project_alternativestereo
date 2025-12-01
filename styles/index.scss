@@ -3,6 +3,7 @@
 body {
     /* 공통 */
     min-width:320px;
+    min-height:100vh; height:auto;
     background:url(../images/bg003.png) center/20% repeat;
     h2.sub_title {
         color:$color-point-red;
@@ -34,7 +35,7 @@ body {
                         .menu_under_shop {
                             padding:16px 8px 24px;
                             @include flex-col; gap:12px; align-items:flex-start;
-                            li {
+                            li { display:none;
                                 a {
                                     @include font_basic_med; font-size:$font-size-p-16;
                                 }
@@ -57,9 +58,9 @@ body {
         }
     }
     main {
+        @include flex-col; gap:120px;
         #main1_bnr {
-            position:relative;
-            width:100vw; height:100vh;
+            width:100vw; height:100vh; position:relative;
             background:url(../images/main1_bnr_bg_noise.png) center/cover no-repeat;
             .swiper-wrapper {
                 .swiper-slide {
@@ -83,8 +84,55 @@ body {
                     }
                 }
             }
-            .swiper-pagination {
-                position:absolute; right:0; bottom:20%
+            .swiper-controls-group {
+                width:400px; height:24px;
+                position:absolute; right:20%; bottom:10%;
+                @include flex-row; gap:8px; justify-content:center; align-items:center;
+                .swiper-pagination {
+                    transform:translateX(50px);
+                    width:300px; height:4;
+                    background-color:$color-white-bg;
+                    .swiper-pagination-progressbar-fill {
+                        background-color:$color-point-red;
+                    }
+                }
+                .swiper-button-prev ,.swiper-button-next {width:20px; height:20px;}
+            }
+        }
+        #main2_best {
+            background:url(../images/bg006.jpg) center/cover repeat; 
+            padding:60px 0 120px; @include flex-col; gap:40px; align-items:center;
+            #best-swiper {
+                width:1560px;
+                .swiper-wrapper {
+                    .swiper-slide {
+                        @include flex-col; gap:16px;
+                        width:360px;
+                        .color_chips_container {
+                            height:20px;
+                            .each_color_chip {width:20px; height:20px;}
+                        }
+                        a {
+                            .best_prod_name {@include font_basic_reg; font-size:$font-size-p-16;}
+                        }
+                        .best_prod_details {
+                            @include flex-row; justify-content:space-between;
+                            .prod_price {
+                                .dc_rate {
+                                    color:$color-red-bg;
+                                    font-size:$font-size-p-18; @include font_basic_sbold;
+                                }
+                                .dc_price {
+                                    font-size:$font-size-p-18; @include font_basic_sbold;
+                                }
+                                .original_price {
+                                    color:$color-point-beige;
+                                    font-size:$font-size-p-14; @include font_basic_med;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

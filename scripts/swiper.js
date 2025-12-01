@@ -18,13 +18,13 @@ const bnrSwiper = new Swiper ('#main1_bnr', {
     autoplay:true,
     loop:true,
     pagination:{
-        el:'.swiper-pagination',
+        el:'.swiper-pagination.bar',
         clickable:true,
-        type:"fraction",
+        type:'progressbar'
     },
     navigation:{
-        prevEl:".swiper-button-prev",
-        nextEl:".swiper-button-next"
+        prevEl:".swiper-button-prev.custom-prev",
+        nextEl:".swiper-button-next.custom-next"
     }
 })
 

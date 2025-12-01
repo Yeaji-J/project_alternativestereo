@@ -31,6 +31,10 @@ $color-white-bg:#F8F8F8;
     object-fit:cover;
 }
 
+@mixin font_basic_reg {
+    line-height:$line-height-basic;
+    letter-spacing:-2%;
+}
 @mixin font_basic_med {
     font-weight:$font-weight-med;
     line-height:$line-height-basic;
