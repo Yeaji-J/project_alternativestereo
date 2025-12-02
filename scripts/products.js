@@ -319,5 +319,6 @@ const instaData = [
     {src:"./images/main8_sns_001.jpg"},
     {src:"./images/main8_sns_002.jpg"},
     {src:"./images/main8_sns_003.jpg"},
-    {src:"./images/main8_sns_004.jpg"},
+    {src:"./images/main8_sns_0041.jpg"},
+    {src:"./images/main8_sns_005.jpg"},
 ]

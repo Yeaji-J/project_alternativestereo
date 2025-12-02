@@ -51,6 +51,10 @@ $color-white-bg:#F8F8F8;
     letter-spacing:-2%;
 }
 
+@mixin en-font {
+    font-family:"Archivo Black", sans-serif;
+    line-height:$line-height-basic;
+}
 @mixin main_sub_title_d { 
     font-size:$font-size-h-48;
     font-weight:$font-weight-med;

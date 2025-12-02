@@ -3,7 +3,9 @@
 function productCardHTML(product) {
     return `
     <div class="product_card">
-        <img src="${product.imgSrc}" alt="${product.name}">
+        <div class="product_img">
+            <img src="${product.imgSrc}" alt="${product.name}">
+        </div>
         <div class="prod_info">
             <h3 class="new_prod_name">${product.name}</h3>
             <p class="new_prod_desc">${product.desc}</p>
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     //HTML에 데이터 채워진 후에 Swiper 인스턴스 최초 생성
     launchingSwiper = new Swiper ('#launch_tab_panel_wrapper', {
         slidesPerView: 3.8,
+        spaceBetween:24,
         loop: false,
         pagination: {
             el: '.swiper-pagination',

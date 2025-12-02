@@ -57,6 +57,7 @@ const bestHTML = bestData.map(best => {
 bestSwiperWrapper.innerHTML = bestHTML;
 const bestSwiper = new Swiper ('#best-swiper',{
     slidesPerView:4,
+    watchOverflow:false,
     spaceBetween:24,
     navigation:{
         prevEl:".swiper-button-prev",
@@ -80,18 +81,13 @@ const lookbookHTML = lookbookData.map(lookbook => {
         <div class="lookbook_prod_wrap">
         ${lookbookProdWrapHTML}
         </div>
-        <div class="lookbook_thumbnail">
-            <div class="lookbook_photo_card">
-            <a href="#">
+        <div class="lookbook_photo_card">
+            <a href="#" class="lookbook_photo_card_a">
                 <img src="${lookbook.cardSrc}" alt="${lookbook.cardAlt}">
             </a>
-                <div class="lookbook_desc">
-                    <p>${lookbook.cardDesc}</p>
-                    <p class="lookbook_name">${lookbook.cardName}</p>
-                </div>
-            </div>
-            <div class="lookbook_envelop">
-                <img src="./images/bg002.jpg" alt="봉투 이미지">
+            <div class="lookbook_desc">
+                <p>${lookbook.cardDesc}</p>
+                <p class="lookbook_name">${lookbook.cardName}</p>
             </div>
         </div>
     </div>
@@ -110,7 +106,7 @@ const instaSwiperWrapper = document.querySelector('#instagram_wrap .swiper-wrapp
 const instaHTML = instaData.map(feed => {
     return `
     <div class="swiper-slide">
-        <a href="#"><img src="${feed.src}" alt="인스타그램 속 상품 확인하기"></a>
+        <a href="#" class="instagram_a"><img src="${feed.src}" alt="인스타그램 속 상품 확인하기"></a>
     </div>
     `;
 }).join('');
@@ -118,7 +114,12 @@ instaSwiperWrapper.innerHTML = instaHTML;
 const instaSwiper = new Swiper('#instagram_wrap',{
     slidesPerView:4,
     spaceBetween:24,
-    autoplay:true,
+    speed:2000,
+    autoplay:{
+        delay:50,
+        disableOnInteraction:false,
+        pauseOnMouseEnter:true,
+    },
     clickable:true,
     loop:true,
     pagination:{
