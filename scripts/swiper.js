@@ -123,11 +123,13 @@ const instaSwiper = new Swiper('#instagram_wrap',{
     clickable:true,
     loop:true,
     pagination:{
-        el:'.swiper-pagination',
+        el:'.swiper-pagination.sns-bar',
+        clickable:true,
         type:'progressbar'
     },
     navigation:{
-        prevEl:'.swiper-button-prev',
-        nextEl:'.swiper-button-next',
+        prevEl:'.swiper-button-prev.sns-custom-prev',
+        nextEl:'.swiper-button-next.sns-custom-next',
+        clickable:true,
     }
 })

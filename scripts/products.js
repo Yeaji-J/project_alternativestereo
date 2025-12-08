@@ -316,9 +316,11 @@ const launchData = [
 
 //main8_instagram
 const instaData = [
-    {src:"./images/main8_sns_001.jpg"},
-    {src:"./images/main8_sns_002.jpg"},
-    {src:"./images/main8_sns_003.jpg"},
-    {src:"./images/main8_sns_0041.jpg"},
-    {src:"./images/main8_sns_005.jpg"},
+    {src:"./images/main8_sns_010.jpg"},
+    {src:"./images/main8_sns_011.jpg"},
+    {src:"./images/main8_sns_006.jpg"},
+    {src:"./images/main8_sns_007.jpg"},
+    {src:"./images/main8_sns_008.jpg"},
+    {src:"./images/main8_sns_009.jpg"},
+    {src:"./images/main8_sns_012.jpg"},
 ]
