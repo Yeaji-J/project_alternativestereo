@@ -58,7 +58,8 @@ const bestData = [
         prodName:"립 포션 스티밍 밀크",
         imgSrc:"./images/main2_best_003.png",
         colorCodes : ['#f1f1f1'],
-        dcRate:"14,400원",
+        dcRate:"",
+        dcPrice:"14,400원",
         originalPrice:"16,000원",
     },
     {
@@ -93,7 +94,8 @@ const bestData = [
         prodName:"립 포션 스티밍 밀크",
         imgSrc:"./images/main2_best_003.png",
         colorCodes : ['#f1f1f1'],
-        dcRate:"14,400원",
+        dcRate:"",
+        dcPrice:"14,400원",
         originalPrice:"16,000원",
     },
     {
@@ -316,8 +318,11 @@ const launchData = [
 
 //main8_instagram
 const instaData = [
-    {src:"./images/main8_sns_001.jpg"},
-    {src:"./images/main8_sns_002.jpg"},
-    {src:"./images/main8_sns_003.jpg"},
-    {src:"./images/main8_sns_004.jpg"},
+    {src:"./images/main8_sns_010.jpg"},
+    {src:"./images/main8_sns_011.jpg"},
+    {src:"./images/main8_sns_006.jpg"},
+    {src:"./images/main8_sns_007.jpg"},
+    {src:"./images/main8_sns_008.jpg"},
+    {src:"./images/main8_sns_009.jpg"},
+    {src:"./images/main8_sns_012.jpg"},
 ]

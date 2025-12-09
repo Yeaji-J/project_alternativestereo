@@ -20,10 +20,10 @@
     <!-- css, js -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
-    <script src="./scripts/index.js" defer></script>
     <script src="./scripts/products.js" defer></script>
     <script src="./scripts/swiper.js" defer></script>
     <script src="./scripts/tab_menu.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
 </head>
 <body>
     <header>
@@ -98,9 +98,9 @@
                 <div class="swiper-wrapper">
                     <!-- <div class="siwper-slide></div> js -->
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </section>
         <section id="main3_new">
             <h2 class="sub_title">New-Products</h2>
@@ -121,16 +121,28 @@
             <p>얼터너티브스테레오는 아날로그의 멋이 있는 로우파이 컬처를 기반으로 하는 뷰티 & 라이프스타일 브랜드입니다.<br>뷰티 노하우와 룩, 아직 발견하지 못한 새로운 질감과 컬러를 담은 뷰티 상품들을 중심으로 아날로그 감성의 문화와 스타일을 풀어갑니다.</p>
         </section>
         <section class="swiper" id="main5_lookbook">
-            <h2 class="sub_title">Alternative<br>Lookbook</h2>
-            <p class="sub_desc">
-                The essence of color,<br>reimagined by Alternativestereo.<br>색의 본질을,<br>얼터너티브스테레오만의 감각으로 다시 그리다.
-            </p>
-            <p class="more_info">룩북에 활용된 제품들을 바로 만나보세요!</p>
+            <div class="title_section">
+                <h2 class="sub_title">Alternative<br>Lookbook</h2>
+                <p class="sub_desc">
+                    The essence of color,<br>reimagined by Alternativestereo.<br>색의 본질을,<br>얼터너티브스테레오만의 감각으로 다시 그리다.
+                </p>
+                <p class="more_info">룩북에 활용된 제품들을 바로 만나보세요!</p>
+            </div>
             <div class="swiper-wrapper">
             <!-- <div class="swiper-slide"></div> js -->
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="20" fill="#F8F8F8"/>
+                    <path d="M24.1125 30L14.1125 20L24.1125 10L25.8875 11.775L17.6625 20L25.8875 28.225L24.1125 30Z" fill="#C70612"/>
+                </svg>
+            </div>
+            <div class="swiper-button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect x="40" y="40" width="40" height="40" rx="20" transform="rotate(180 40 40)" fill="#F8F8F8"/>
+                    <path d="M15.8875 10L25.8875 20L15.8875 30L14.1125 28.225L22.3375 20L14.1125 11.775L15.8875 10Z" fill="#C70612"/>
+                </svg>
+            </div>
         </section>
         <section id="main6_launching">
             <a href="#"><img src="./images/caramel001.jpg" alt="립 포션 카라멜 글레이즈 8ml"></a>
@@ -149,13 +161,37 @@
                             <!-- <div class="swiper-slide slide1"></div> js -->
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-controls-group">
+                        <div class="swiper-button-prev new-custom-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <mask id="mask0_225_155" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                    <rect width="20" height="20" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_225_155)">
+                                    <path d="M13.3333 18.3334L5 10L13.3333 1.66669L14.8125 3.14585L7.95833 10L14.8125 16.8542L13.3333 18.3334Z" fill="#C70612"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="swiper-pagination new-bar swiper-pagination-progressbar"></div>
+                        <div class="swiper-button-next new-custom-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <mask id="mask0_225_159" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                                <rect width="20" height="20" fill="#D9D9D9"/>
+                                </mask>
+                                <g mask="url(#mask0_225_159)">
+                                <path d="M6.68754 18.3334L5.20837 16.8542L12.0625 10L5.20837 3.14585L6.68754 1.66669L15.0209 10L6.68754 18.3334Z" fill="#C70612"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="main7_eco_friendly">
-            <h2 class="sub_title small">Eco-friendly Packaging</h2>
-            <p>오래된 잡화점이라는 컨셉이 녹아든 단상자로<br>친환경 대나무 펄프로 제작된 종이를 사용하였습니다.</p>
+            <div class="text_section">
+                <h2 class="sub_title small">Eco-friendly Packaging</h2>
+                <p>오래된 잡화점이라는 컨셉이 녹아든 단상자로<br>친환경 대나무 펄프로 제작된 종이를 사용하였습니다.</p>
+            </div>
             <ul class="eco_icon_set">
                 <li>
                     <img src="./images/main7_eco_bamboo.png" alt="대나무 펄프 함유">
@@ -178,9 +214,6 @@
                     <!-- <div class="swiper-slide"></div> js -->
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </section>
     </main>
     <footer>
@@ -190,35 +223,39 @@
         </div>
         <div class="footer_menu section2">
             <span class="big_menu">BANK ACCOUNT</span>
-            <ul class="sub_menu_title">
-                <li>우리은행</li>
-                <li>예금주</li>
-            </ul>
-            <ul class="sub_menu_contents">
-                <li>1005-204-206467</li>
-                <li>주식회사 에이에스씨씨</li>
-            </ul>
+            <div class="footer_contents">
+                <ul class="sub_menu_title">
+                    <li>우리은행</li>
+                    <li>예금주</li>
+                </ul>
+                <ul class="sub_menu_contents">
+                    <li>1005-204-206467</li>
+                    <li>주식회사 에이에스씨씨</li>
+                </ul>
+            </div>
         </div>
         <div class="footer_menu section3">
             <span class="big_menu">COMPANY INFO</span>
-            <ul class="sub_menu_title">
-                <li>COMPANY</li>
-                <li>C.P.O</li>
-                <li>E-mail</li>
-                <li>TEL</li>
-                <li>ORDER LICENSE</li>
-                <li>BUSINESS LICENSE</li>
-                <li>ADDRESS</li>
-            </ul>
-            <ul class="sub_menu_contents">
-                <li>주식회사 에이에스씨씨</li> 
-                <li>지혜란</li>
-                <li><address><a href="mailto:ascc@alternativestereo.com">ascc@alternativestereo.com</a></address></li>
-                <li><span>02-6091-5420</span><span>오전 10시 ~ 오후 6시 (주말, 공휴일 휴무)</span></li>
-                <li>2022-서울송파-1356<a href="#">[사업자정보확인]</a></li>
-                <li>482-88-01913</li>
-                <li><address>05854 서울 송파구 법원로 114 엠스테이트 B동 712호</address></li>
-            </ul>
+            <div class="footer_contents">
+                <ul class="sub_menu_title">
+                    <li>COMPANY</li>
+                    <li>C.P.O</li>
+                    <li>E-mail</li>
+                    <li>TEL</li>
+                    <li>ORDER LICENSE</li>
+                    <li>BUSINESS LICENSE</li>
+                    <li>ADDRESS</li>
+                </ul>
+                <ul class="sub_menu_contents">
+                    <li>주식회사 에이에스씨씨</li> 
+                    <li>지혜란</li>
+                    <li><address><a href="mailto:ascc@alternativestereo.com">ascc@alternativestereo.com</a></address></li>
+                    <li><span>02-6091-5420</span><span>오전 10시 ~ 오후 6시 (주말, 공휴일 휴무)</span></li>
+                    <li>2022-서울송파-1356<a href="#">[사업자정보확인]</a></li>
+                    <li>482-88-01913</li>
+                    <li><address>05854 서울 송파구 법원로 114 엠스테이트 B동 712호</address></li>
+                </ul>
+            </div>
         </div>
     </footer>
 </body>
