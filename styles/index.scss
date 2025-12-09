@@ -136,6 +136,214 @@ body {
                         }
                     }
                 }
+                .swiper-button-prev {
+                    position:absolute; top:50%; left:-60px; transform:translateY(-50%); z-index:99;
+                    width:20px; height:20px; color:$color-black;
+                }
+                .swiper-button-next {
+                    position:absolute; top:50%; right:-60px; transform:translateY(-50%);
+                    width:20px; height:20px; color:$color-black;
+                }
+                .swiper-button-lock {
+                        display:flex !important; opacity:1 !important; z-index:99;
+                }
+            }
+            
+        }
+        #main3_new {
+            padding:60px 0;
+            @include flex-col; gap:24px; align-items:center;
+            .new_tab_menu_area {
+                @include flex-col; gap:60px; align-items:center;
+                .new_tab_menu_list {
+                    height:60px;
+                    @include flex-row; gap:48px; justify-content:center; align-items:center;
+                    .new_tab_btn {
+                        > button {@include font_basic_sbold; font-size:$font-size-p-18;}
+                    }
+                    .new_tab_btn.active {
+                        width:100px; height:27px; background:url(../images/source021.jpg) center/100% no-repeat;
+                        text-align:center;
+                        > button {color:$color-point-red;}
+                    }
+                }
+                #new_products_page {
+                    @include flex-row; gap:60px;
+                    .product_card {
+                        width:700px; height:305px;
+                        background:$color-red-bg; padding:32px;
+                        @include flex-row; gap:24px; align-items:center;
+                        .product_img {
+                            width:360px; height:240px;
+                            img {width:100%; height:100%; object-fit:cover;}
+                        }
+                        .prod_info {
+                            flex-grow:1;
+                            height:240px; padding:16px 0;
+                            @include flex-col; justify-content:space-between;
+                            .new_prod_name {@include font_basic_med; font-size:$font-size-p-16; color:$color-white;}
+                            .new_prod_desc {@include font_basic_med; font-size:$font-size-p-14; color:$color-white;}
+                            .new_prod_kw {line-height:$line-height-basic; font-weight:400; font-size:$font-size-p-14; color:$color-white;}
+                            .new_prod_details {
+                                @include flex-row; justify-content:space-between; width:100%;
+                                .prod_price {
+                                    @include flex-row; gap:8px;
+                                    @include font_basic_sbold; font-size:$font-size-p-18; color:$color-white;
+                                    .dc_rate {color:$color-point-beige;}
+                                    .dc_price {color:$color-white;}
+                                    .original_price {font-size:$font-size-p-14; font-weight:400; color:$color-white;}
+                                }
+                                button {
+                                    width:20px; height:20px;
+                                    img {width:100%; height:100%; color:$color-white;}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #main4_brand_story {
+            background:url(../images/main4_brand_001.jpg) center/cover no-repeat;
+            height:500px; padding:80px 120px; @include flex-col; gap:40px; justify-content:center; align-items:center;
+            h2 {font-size:$font-size-h-40; color:$color-white;}
+            p {@include font_basic_med; font-size:$font-size-p-16; line-height:200%; text-align:center; color:$color-white;}
+        }
+        #main5_lookbook {
+            width:100vw;
+            background:$color-white-bg; padding:60px;
+            position:relative; z-index:800;
+            .title_section {
+                width:480px; height:900px; border-top-left-radius:20px; border-bottom-left-radius:20px;
+                background:url(../images/bg002.png) center/cover no-repeat;
+                position:absolute; top:50%; transform:translateY(-50%); right:0; z-index:900;
+                @include flex-col; gap:140px; justify-content:center; align-items:center;
+                .sub_title {color:$color-white;}
+                .sub_desc {@include font_basic_med; font-size:$font-size-p-20; color:$color-white; text-align:center;}
+                .more_info {@include font_basic_med; font-size:$font-size-p-18; color:$color-white;}
+            }
+            .swiper-wrapper {
+                .swiper-slide {
+                    width:1230px;
+                    @include flex-row; gap:60px; justify-content:center; align-items:center;
+                    .lookbook_prod_wrap {
+                        display:grid; grid-template-columns:320px 320px; grid-template-rows:360px 360px; gap:40px;
+                        .lookbook_prod {
+                            display:block;
+                            @include flex-col; gap:16px; align-items:center;
+                            img {background:$color-white; width:320px; height:320px; border-radius:20%;}
+                            .lookbook_prod_name {font-size:$font-size-p-16;}
+                        }
+                    }
+                    .lookbook_photo_card {
+                        position:relative;
+                        .lookbook_photo_card_a {width:570px; height:848px;
+                            display:block;
+                            img {
+                                width:100%; height:100%;
+                            }
+                        }
+                        .lookbook_desc {
+                            position:absolute; left:50%; bottom:4%; transform:translate(-50%, 4%);
+                            @include flex-col; align-items:center;
+                            p {@include font_basic_med; font-size:$font-size-p-18; color:$color-point-red;}
+                            .lookbook_name {@include en-font; font-size:$font-size-h-32; font-weight:400;}
+                        }
+                    }
+                }
+            }
+        }
+        #main6_launching {
+            width:100vw; height:840px; padding:60px 40px;
+            @include flex-row; gap:40px; justify-content:center; align-items:center;
+            a {width:600px; height:700px;
+                img {width:100%; height:100%;}
+            }
+            .launching_info_section {
+                padding:40px 0; flex-grow:1;
+                @include flex-col; justify-content:space-between;
+                .title {
+                    .sub_title {margin-bottom:8px;}
+                    p {@include font_basic_sbold; font-size:$font-size-p-20;}
+                }
+                .launch_tab_menu_area {
+                    @include flex-col; gap:24px;
+                    .launch_tab_menu_list {
+                        @include flex-row; gap:32px;
+                        .launch_tab_btn {
+                            button {@include font_basic_med; font-size:$font-size-p-18;}
+                        }
+                        .active {
+                            background:url(../images/source021.jpg) center/cover no-repeat;
+                            padding:0 40px;
+                            button {color:$color-point-red;}
+                        }
+                    }
+                    #launch_tab_panel_wrapper {
+                        width:1500px;
+                        @include flex-col; gap:24px;
+                        .swiper-wrapper {
+                            .swiper-slide {
+                                a {
+                                    width:320px; height:360px;
+                                    img {width:100%; height:100%;}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #main7_eco_friendly {
+            background:url(../images/main7_eco.png) center/cover no-repeat;
+            height:520px; padding: 80px 240px;
+            @include flex-col; gap:80px; justify-content:center;
+            .text_section {
+                @include flex-col; gap:16px; text-align:right;
+                .sub_title.small {font-size:$font-size-h-40; color:$color-white;}
+                p {@include font_basic_med; font-size:$font-size-p-16; text-align:right; color:$color-white;}
+            }
+            .eco_icon_set {
+                @include flex-row; gap:24px; justify-content:flex-end;
+                li {
+                    width:100px; @include flex-col; gap:8px; justify-content:center; align-items:center;
+                    img {width:60px; height:60px;}
+                    span {@include font_basic_med; font-size:$font-size-p-14; color:$color-white;}
+                }
+            }
+        }
+        #main8_instagram {
+            position:relative;
+            padding:40px 200px;
+            .sub_title {margin-bottom:60px;}
+            #instagram_wrap {margin-bottom:36px;
+                .swiper-wrapper {
+                    .swiper-slide {
+                        .instagram_a {
+                            width:360px; height:480px;
+                            img {width:100%; height:100%;}
+                        }
+                    }
+                }
+            }
+            .swiper-controls-group {
+                width:680px; height:24px;
+                position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+                @include flex-row; gap:8px; justify-content:center; align-items:center;
+                .sns-bar {
+                    width:600px; height:4;
+                    background-color:$color-point-beige;
+                    .swiper-pagination-progressbar-fill {
+                        background-color:$color-point-red;
+                    }
+                }
+                .swiper-button-prev ,.swiper-button-next {width:20px; height:20px;}
+                .sns-custom-prev {
+                    transform:translateX(620px);
+                }
+                .sns-custom-next {
+                    
+                }
             }
             .swiper-button-prev {
                 position:absolute; left:8%; z-index:999;

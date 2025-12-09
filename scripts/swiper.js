@@ -57,6 +57,7 @@ const bestHTML = bestData.map(best => {
 bestSwiperWrapper.innerHTML = bestHTML;
 const bestSwiper = new Swiper ('#best-swiper',{
     slidesPerView:4,
+    watchOverflow:false,
     spaceBetween:24,
     loop:true,
     navigation:{
