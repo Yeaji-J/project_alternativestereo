@@ -64,11 +64,17 @@ function launchingHTML(prod) {
 //wrapper에 slides 로드 & swiper 업데이트
 function loadLaunchingProdsPage(category) {
     const launchingSwiperWrapper = document.querySelector('#launch_tab_panel_wrapper .swiper-wrapper')
+    const launchingThumbnail = document.querySelector('.launching_thumbnail')
+    console.log(launchingThumbnail)
     const categoryData = launchData.find(data => data.category === category); //해당 category 정보 전부 가져오기
     if(!categoryData) return;
     const launchingDataListHTML = categoryData.products.map(launchingHTML).join('');
+    const launchingDataImgHTML = `
+        <img src="${categoryData.img.src}" alt="${categoryData.img.alt}">
+    `;
     //해당 category 정보를 기반으로 생성된 slide html 코드 묶음; 문자열; category 내 products에 대한 정보만 맵핑해 사용
     launchingSwiperWrapper.innerHTML = launchingDataListHTML;
+    launchingThumbnail.innerHTML = launchingDataImgHTML;
 
     if (launchingSwiper) {
         launchingSwiper.update();

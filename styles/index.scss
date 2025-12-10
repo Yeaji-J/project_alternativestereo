@@ -22,39 +22,56 @@ body {
         nav {
             height:100%; padding:60px 0; text-align:left;
             @include flex-col; justify-content:space-between;
-            .menu_bundle {
+            .menu_bundle { //메뉴 영역 전체
                 @include flex-col; gap:20px;
-                .menu_toggle {
+                .menu_toggle { //전체 메뉴 아이콘
                     width:36px; height:36px;
                     img {@include img_cover;}
                 }
-                .dropdown_menu {
+                .dropdown_menu { //메뉴 텍스트 전체
                     @include flex-col; gap:16px; align-items:flex-start;
-                    .sub_menu {
+                    display:none;
+                    .sub_menu { //대메뉴
                         a {@include font_basic_sbold; font-size:$font-size-p-16;}
-                        .menu_under_shop {
-                            padding:16px 8px 24px;
-                            @include flex-col; gap:12px; align-items:flex-start;
-                            li { display:none;
+                        &:hover {
+                            > .menu_under_shop { 
+                                @include flex-col; gap:12px; align-items:flex-start;
+                                padding:16px 8px 24px;
+                            }
+                        }
+                        .menu_under_shop { //중메뉴 컨테이너
+                            display:none;
+                            li { //중메뉴
+                                &:hover {
+                                    .menu_under_all {
+                                        padding:16px;
+                                        @include flex-col; gap:8px; align-items:flex-start;
+                                    }
+                                }
                                 a {
                                     @include font_basic_med; font-size:$font-size-p-16;
                                 }
-                                .menu_under_all {
-                                    padding:16px;
-                                    @include flex-col; gap:8px; align-items:flex-start;
-                                    li {
+                                .menu_under_all { //소메뉴 컨테이너
+                                    display:none;
+                                    li { //소메뉴
                                         a {@include font_basic_med; font-size:$font-size-p-14;}
                                     }
                                 }
                             }
-                            
                         }
+                        
                     }
                 }
             }
             .user_icons {
                 @include flex-col; gap:24px;
             }
+        }
+        nav.dark-bg-active {
+            a, span {color: #fff;}
+            nav img, h1 img {filter: invert(1);}
+            .menu_toggle img {filter: invert(1);}
+            .user_icons img {filter: invert(1);}
         }
     }
     main {
@@ -112,8 +129,10 @@ body {
                             img {width:100%;}
                         }
                         .color_chips_container {
-                            height:20px;
-                            .each_color_chip {display:inline-block; width:20px; height:20px; border-radius:20px;}
+                            height:20px; @include flex-row; gap:8px;
+                            .each_color_chip {
+                                display:inline-block;
+                                width:20px; height:20px; border-radius:20px;}
                         }
                         a {
                             .best_prod_name {@include font_basic_reg; font-size:$font-size-p-16;}
@@ -136,17 +155,17 @@ body {
                         }
                     }
                 }
-                .swiper-button-prev {
-                    position:absolute; top:50%; left:-60px; transform:translateY(-50%); z-index:99;
-                    width:20px; height:20px; color:$color-black;
-                }
-                .swiper-button-next {
-                    position:absolute; top:50%; right:-60px; transform:translateY(-50%);
-                    width:20px; height:20px; color:$color-black;
-                }
-                .swiper-button-lock {
-                        display:flex !important; opacity:1 !important; z-index:99;
-                }
+            }
+            .swiper-button-prev {
+                position:absolute; left:10%; z-index:999;
+                width:20px; height:20px; color:$color-black;
+            }
+            .swiper-button-next {
+                position:absolute; right:10%;
+                width:20px; height:20px; color:$color-black;
+            }
+            .swiper-button-lock {
+                    display:flex !important; opacity:1 !important; z-index:99;
             }
             
         }
@@ -264,7 +283,7 @@ body {
                 @include flex-col; justify-content:space-between;
                 .title {
                     .sub_title {margin-bottom:8px;}
-                    p {@include font_basic_sbold; font-size:$font-size-p-20;}
+                    p {@include font_basic_sbold; font-size:$font-size-p-20; margin-bottom:8px;}
                 }
                 .launch_tab_menu_area {
                     @include flex-col; gap:24px;
@@ -468,17 +487,17 @@ body {
             }
         }
         #main6_launching {
-            width:100vw; height:840px; padding:60px 40px;
+            width:100vw; height:840px; padding:60px 40px; overflow-x:hidden;
             @include flex-row; gap:40px; justify-content:center; align-items:center;
             a {width:600px; height:700px;
                 img {width:100%; height:100%;}
             }
             .launching_info_section {
-                padding:40px 0; flex-grow:1; width:calc(100% - 640px);
+                /* padding:40px 0;  */flex-grow:1; width:calc(100% - 640px);
                 @include flex-col; justify-content:space-between;
                 .title {
-                    .sub_title {margin-bottom:8px;}
-                    p {@include font_basic_sbold; font-size:$font-size-p-20; margin-bottom:8px;}
+                    .sub_title {margin-bottom:16px;}
+                    p {@include font_basic_sbold; font-size:$font-size-p-20; margin-bottom:16px;}
                 }
                 .launch_tab_menu_area {
                     @include flex-col; gap:24px; width:100%; height:auto;
@@ -549,36 +568,16 @@ body {
                 .swiper-wrapper {
                     .swiper-slide {
                         .instagram_a {
-                            width:360px; height:480px;
                             img {width:100%; height:100%;}
                         }
                     }
-                }
-            }
-            .swiper-controls-group {
-                width:680px; height:24px;
-                position:absolute; left:50%; bottom:0; transform:translateX(-50%);
-                @include flex-row; gap:8px; justify-content:center; align-items:center;
-                .sns-bar {
-                    width:600px; height:4px;
-                    background-color:$color-point-beige;
-                    .swiper-pagination-progressbar-fill {
-                        background-color:$color-point-red;
-                    }
-                }
-                .swiper-button-prev ,.swiper-button-next {width:20px; height:20px;}
-                .sns-custom-prev {
-                    transform:translateX(620px);
-                }
-                .sns-custom-next {
-                    
                 }
             }
         }
     }
     footer {
         border-top-left-radius:20px; border-top-right-radius:20px; margin-top:120px;
-        background:url(../images/footer_003.jpg) center/cover no-repeat;
+        background:url(../images/bg006_edit.png) center/cover no-repeat;
         @include flex-row; padding:100px 200px; justify-content:space-between;
         .footer_menu { color:$color-point-red;
             @include flex-col; gap:32px;

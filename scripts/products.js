@@ -262,6 +262,9 @@ const lookbookData = [
 const launchData = [
     {
         category:"caramel",
+        img: { 
+            src: "./images/caramel001.jpg",
+            alt: "립 포션 카라멜 글레이즈 8ml",},
         products:[
             {
                 imgSrc:'./images/main6_new_001.png',
@@ -287,6 +290,9 @@ const launchData = [
     },
     {
         category:"sugar_glazed",
+        img: { 
+            src: "./images/sugar_glazed_001.jpg",
+            alt: "립 포션 슈가 글레이즈 틴트 미니 4ml",},
         products:[
             {
                 imgSrc:'./images/main6_new2_001.png',

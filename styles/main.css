@@ -62,6 +62,7 @@ body header nav .menu_bundle .dropdown_menu {
   flex-flow: column nowrap;
   gap: 16px;
   align-items: flex-start;
+  display: none;
 }
 body header nav .menu_bundle .dropdown_menu .sub_menu a {
   font-weight: 700;
@@ -69,15 +70,22 @@ body header nav .menu_bundle .dropdown_menu .sub_menu a {
   letter-spacing: -2%;
   font-size: 1rem;
 }
-body header nav .menu_bundle .dropdown_menu .sub_menu .menu_under_shop {
-  padding: 16px 8px 24px;
+body header nav .menu_bundle .dropdown_menu .sub_menu:hover > .menu_under_shop {
   display: flex;
   flex-flow: column nowrap;
   gap: 12px;
   align-items: flex-start;
+  padding: 16px 8px 24px;
 }
-body header nav .menu_bundle .dropdown_menu .sub_menu .menu_under_shop li {
+body header nav .menu_bundle .dropdown_menu .sub_menu .menu_under_shop {
   display: none;
+}
+body header nav .menu_bundle .dropdown_menu .sub_menu .menu_under_shop li:hover .menu_under_all {
+  padding: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  align-items: flex-start;
 }
 body header nav .menu_bundle .dropdown_menu .sub_menu .menu_under_shop li a {
   font-weight: 500;
@@ -86,11 +94,7 @@ body header nav .menu_bundle .dropdown_menu .sub_menu .menu_under_shop li a {
   font-size: 1rem;
 }
 body header nav .menu_bundle .dropdown_menu .sub_menu .menu_under_shop li .menu_under_all {
-  padding: 16px;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 8px;
-  align-items: flex-start;
+  display: none;
 }
 body header nav .menu_bundle .dropdown_menu .sub_menu .menu_under_shop li .menu_under_all li a {
   font-weight: 500;
@@ -102,6 +106,18 @@ body header nav .user_icons {
   display: flex;
   flex-flow: column nowrap;
   gap: 24px;
+}
+body header nav.dark-bg-active a, body header nav.dark-bg-active span {
+  color: #fff;
+}
+body header nav.dark-bg-active nav img, body header nav.dark-bg-active h1 img {
+  filter: invert(1);
+}
+body header nav.dark-bg-active .menu_toggle img {
+  filter: invert(1);
+}
+body header nav.dark-bg-active .user_icons img {
+  filter: invert(1);
 }
 body main {
   display: flex;
@@ -208,6 +224,9 @@ body main #main2_best #best-swiper .swiper-wrapper .swiper-slide a img {
 }
 body main #main2_best #best-swiper .swiper-wrapper .swiper-slide .color_chips_container {
   height: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
 }
 body main #main2_best #best-swiper .swiper-wrapper .swiper-slide .color_chips_container .each_color_chip {
   display: inline-block;
@@ -245,26 +264,22 @@ body main #main2_best #best-swiper .swiper-wrapper .swiper-slide .best_prod_deta
   line-height: 150%;
   letter-spacing: -2%;
 }
-body main #main2_best #best-swiper .swiper-button-prev {
+body main #main2_best .swiper-button-prev {
   position: absolute;
-  top: 50%;
-  left: -60px;
-  transform: translateY(-50%);
-  z-index: 99;
+  left: 10%;
+  z-index: 999;
   width: 20px;
   height: 20px;
   color: #000;
 }
-body main #main2_best #best-swiper .swiper-button-next {
+body main #main2_best .swiper-button-next {
   position: absolute;
-  top: 50%;
-  right: -60px;
-  transform: translateY(-50%);
+  right: 10%;
   width: 20px;
   height: 20px;
   color: #000;
 }
-body main #main2_best #best-swiper .swiper-button-lock {
+body main #main2_best .swiper-button-lock {
   display: flex !important;
   opacity: 1 !important;
   z-index: 99;
@@ -555,6 +570,7 @@ body main #main6_launching .launching_info_section .title p {
   line-height: 150%;
   letter-spacing: -2%;
   font-size: 1rem;
+  margin-bottom: 8px;
 }
 body main #main6_launching .launching_info_section .launch_tab_menu_area {
   display: flex;
@@ -988,6 +1004,7 @@ body main #main6_launching {
   width: 100vw;
   height: 840px;
   padding: 60px 40px;
+  overflow-x: hidden;
   display: flex;
   flex-flow: row nowrap;
   gap: 40px;
@@ -1003,7 +1020,7 @@ body main #main6_launching a img {
   height: 100%;
 }
 body main #main6_launching .launching_info_section {
-  padding: 40px 0;
+  /* padding:40px 0;  */
   flex-grow: 1;
   width: calc(100% - 640px);
   display: flex;
@@ -1011,14 +1028,14 @@ body main #main6_launching .launching_info_section {
   justify-content: space-between;
 }
 body main #main6_launching .launching_info_section .title .sub_title {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 body main #main6_launching .launching_info_section .title p {
   font-weight: 700;
   line-height: 150%;
   letter-spacing: -2%;
   font-size: 1rem;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 body main #main6_launching .launching_info_section .launch_tab_menu_area {
   display: flex;
@@ -1145,47 +1162,15 @@ body main #main8_instagram .sub_title {
 body main #main8_instagram #instagram_wrap {
   margin-bottom: 36px;
 }
-body main #main8_instagram #instagram_wrap .swiper-wrapper .swiper-slide .instagram_a {
-  width: 360px;
-  height: 480px;
-}
 body main #main8_instagram #instagram_wrap .swiper-wrapper .swiper-slide .instagram_a img {
   width: 100%;
   height: 100%;
-}
-body main #main8_instagram .swiper-controls-group {
-  width: 680px;
-  height: 24px;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-}
-body main #main8_instagram .swiper-controls-group .sns-bar {
-  width: 600px;
-  height: 4px;
-  background-color: #F2DECE;
-}
-body main #main8_instagram .swiper-controls-group .sns-bar .swiper-pagination-progressbar-fill {
-  background-color: #C70612;
-}
-body main #main8_instagram .swiper-controls-group .swiper-button-prev, body main #main8_instagram .swiper-controls-group .swiper-button-next {
-  width: 20px;
-  height: 20px;
-}
-body main #main8_instagram .swiper-controls-group .sns-custom-prev {
-  transform: translateX(620px);
 }
 body footer {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   margin-top: 120px;
-  background: url(../images/footer_003.jpg) center/cover no-repeat;
+  background: url(../images/bg006_edit.png) center/cover no-repeat;
   display: flex;
   flex-flow: row nowrap;
   padding: 100px 200px;
